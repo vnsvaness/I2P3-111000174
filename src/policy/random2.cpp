@@ -19,7 +19,6 @@ Move Random2::get_move(State *state, int depth){
   int k=depth;
   for(int i=0; i<depth; i++){
     k=rand()/k;
-
   }
   return actions[k%actions.size()];
 }
