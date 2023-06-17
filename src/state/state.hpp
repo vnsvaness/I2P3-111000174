@@ -46,6 +46,7 @@ class State{
     GameState game_state = UNKNOWN;
     Board board;
     int player = 0;
+    int score = -10000000000;
     std::vector<Move> legal_actions;
     
     State(){};
@@ -56,6 +57,7 @@ class State{
     int evaluate();
     State* next_state(Move move);
     void get_legal_actions();
+    void print();
     std::string encode_output();
     std::string encode_state();
 };
