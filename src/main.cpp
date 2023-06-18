@@ -395,7 +395,7 @@ bool valid_move(Move move, std::vector<Move>& legal_moves){
 }
 
 
-static const int material_table[7] = {0, 2, 6, 7, 8, 20, 100};
+static const int material_table[7] = {0, 2, 6, 7, 8, 20, 100000000};
 
 int main(int argc, char** argv) {
   assert(argc == 3);

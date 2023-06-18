@@ -13,7 +13,23 @@
  */
 int State::evaluate(){
   // [TODO] design your own evaluation function
-  return 0;
+  static const int material_table[7] = {0, 2, 6, 7, 8, 20, 100000000};
+
+  int white_material = 0;
+  int black_material = 0;
+  int piece;
+  
+  for(size_t i=0; i<BOARD_H; i+=1){
+    for(size_t j=0; j<BOARD_W; j+=1){
+      if((piece=this->board.board[0][i][j])){
+        white_material += material_table[piece];
+      }
+      if((piece=this->board.board[1][i][j])){
+        black_material += material_table[piece];
+      }
+    }
+  }
+  return white_material-black_material;
 }
 
 
@@ -212,7 +228,7 @@ void State::get_legal_actions(){
 }
 
 
-const char PIECE_TABLE[2][7][5] = {
+const char piece_table[2][7][5] = {
   {" ", "♙", "♖", "♘", "♗", "♕", "♔"},
   {" ", "♟", "♜", "♞", "♝", "♛", "♚"}
 };

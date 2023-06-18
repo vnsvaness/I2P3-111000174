@@ -8,5 +8,6 @@
  */
 class Random2{
 public:
-  static Move get_move(State *state, int depth);
+  static int minimax(State* state, int depth, bool isMax, int alpha, int beta);
+  static Move get_best_move(State* state, int depth);
 };
