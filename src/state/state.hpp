@@ -54,7 +54,7 @@ class State{
     State(int player): player(player){};
     State(Board board): board(board){};
     State(Board board, int player): board(board), player(player){};
-    int statevalue=0;//hps
+    
     int evaluate();
     State* next_state(Move move);
     void get_legal_actions();

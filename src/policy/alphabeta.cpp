@@ -2,7 +2,7 @@
 #include <climits>
 
 #include "../state/state.hpp"
-#include "./random2.hpp"
+#include "./alphabeta.hpp"
 
 
 /**
@@ -13,7 +13,7 @@
  * @return Move 
  */
 
-Move Random2::get_best_move(State* state, int depth){
+Move alphabeta::get_best_move(State* state, int depth){
   if(!state->legal_actions.size())
     state->get_legal_actions();
   
@@ -38,7 +38,7 @@ Move Random2::get_best_move(State* state, int depth){
   return bestMove;
 }
 
-int Random2::minimax(State* state, int depth, bool isMax, int alpha, int beta){
+int alphabeta::minimax(State* state, int depth, bool isMax, int alpha, int beta){
   if(!state->legal_actions.size())
     state->get_legal_actions();
   if(depth == 0 || !state->legal_actions.size()){

@@ -3,7 +3,7 @@
 
 #include "../config.hpp"
 #include "../state/state.hpp"
-#include "../policy/random2.hpp"
+#include "../policy/alphabeta.hpp"
 
 
 State* root;
@@ -42,7 +42,7 @@ void write_valid_spot(std::ofstream& fout) {
   // Keep updating the output until getting killed.
   while(true) {
     // Choose a random spot.
-    auto best_move = Random2::get_best_move(root, 6);
+    auto best_move = alphabeta::get_best_move(root, 6);
     fout << best_move.first.first << " " << best_move.first.second << " "\
       << best_move.second.first << " " << best_move.second.second << std::endl;
     
