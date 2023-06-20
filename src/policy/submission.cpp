@@ -2,7 +2,7 @@
 #include <climits>
 
 #include "../state/state.hpp"
-#include "./alphabeta.hpp"
+#include "./submission.hpp"
 
 
 /**
